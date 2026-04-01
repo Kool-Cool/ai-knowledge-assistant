@@ -1,0 +1,81 @@
+AI Knowledge Assistant -- Programming 
+Assessment
+Objective
+Build a mini AI-powered knowledge assistant capable of answering 
+questions over a set of provided documents.
+This exercise evaluates:
+• Backend engineering skills
+• API design
+• Retrieval-Augmented Generation (RAG) understanding
+• Streaming architectures
+• Code quality and system thinking
+Time limit: 48 hours
+Submit a GitHub repository with complete instructions.
+Problem Statement
+Develop a system that:
+1. Ingests documents
+2. Indexes them for semantic retrieval
+3. Answers user questions using retrieved context
+4. Streams responses to the client in real time
+Notes
+You may use open-source libraries and LLM APIs should not be used.
+Focus on:
+• Design
+• Correctness
+• Engineering quality
+• Clear documentation
+Functional Requirements
+1. Document Ingestion
+The system should ingest documents from a folder.
+Supported formats:
+• .txt
+• .pdf
+Processing pipeline:
+1. Extract text
+2. Chunk text into segments
+3. Generate embeddings
+4. Store embeddings in a vector index
+You may use any of the following:
+• FAISS
+• Chroma
+• Any vector database
+2. Question Answering API
+Create a FastAPI service with the following endpoint.
+POST /ask
+Request:
+{ 
+} 
+"question": "What are the side effects of ibuprofen?" 
+System behavior:
+1. Generate embedding for the question
+2. Retrieve the top 5 relevant chunks
+3. Send retrieved context to an LLM
+4. Generate a final answer
+Response:
+{ 
+"answer": "...", 
+"sources": [ 
+"doc1.pdf", 
+"doc3.txt" 
+  ] 
+} 
+3. Streaming Response
+Implement token streaming using either:
+• WebSockets
+• Server-Sent Events (SSE)
+Example endpoint:
+/ask/stream 
+The frontend should receive the generated response incrementally.
+4. Minimal Frontend
+Create a simple Next.js UI that allows users to:
+• Enter a question
+• Submit the query
+• View streaming answers
+The UI does not need sophisticated styling.
+5. Dockerized Setup
+Provide a Docker-based setup so the system can be started using:
+docker-compose up 
+This should run:
+• Backend service
+• Frontend service
+•

@@ -1,3 +1,21 @@
+---
+1. setting up backend using FastAPI
+
+
+
+
+
+----
+Thoughts
+
+- need to build the RAG based LLM
+- context chunking (dynamic no fixed hard threshold for split)
+- prompting Rules ( company policies nd stuff..)
+- streamlit >> nextJS for such projects 
+- Local LLM rather than API based
+- 
+----
+
 AI Knowledge Assistant -- Programming 
 Assessment
 Objective

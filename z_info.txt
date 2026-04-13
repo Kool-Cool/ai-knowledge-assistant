@@ -1,4 +1,17 @@
 ---
+2. Chunking Strategy
+
+https://tutorialq.com/ai/dl-applications/chunking-strategies
+
+
+Chat with PDF 	Recursive ==> choosing this as of now 
+Legal/medical 	Semantic
+Code search	 Language-aware
+
+but in future based on meta data provided by user we will change the Strategy accordingly
+
+
+---
 1. setting up backend using FastAPI
 
 

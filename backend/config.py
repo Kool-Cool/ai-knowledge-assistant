@@ -1,20 +1,20 @@
 from pydantic_settings import BaseSettings
-
+from typing import List
 
 class Settings(BaseSettings):
     ENV: str = "development"
     HOST: str = "127.0.0.1"
     PORT: int = 8000
     RELOAD: bool = True
+    CORS_ORIGINS: List[str] = []
 
     class Config:
         env_file = "config.env"
 
-    def __post_init__(self):
+    def model_post_init(self, __context):
         if self.ENV == "production":
-            self.RELOAD = False
+            object.__setattr__(self, "RELOAD", False)
         else:
-            self.HOST = "localhost"
-            self.RELOAD = True
-
+            object.__setattr__(self, "HOST", "localhost")
+            object.__setattr__(self, "RELOAD", True)
 settings = Settings()
